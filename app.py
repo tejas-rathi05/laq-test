@@ -71,5 +71,9 @@ def compare_images():
         return "Faces match!"
     else:
         return "Faces do not match!"
+    
+    
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
