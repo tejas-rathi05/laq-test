@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Compare Customer Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+            background-color: #559da6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #d6d4d4;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(2, 2, 2, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #140a0a;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #222121;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #065309;
+            color: rgb(239, 233, 233);
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-separator {
+            margin: 30px 0;
+            border-top: 1px solid #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Create Customer Form -->
+        <h1>Create Customer Record</h1>
+        <form action="/add_customer" method="POST" enctype="multipart/form-data">
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter customer name" required>
+
+            <label for="image">Customer Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Separator -->
+        <div class="form-separator"></div>
+
+        <!-- Compare Images Form -->
+        <h2>Compare Customer Images</h2>
+        <form action="/compare_images" method="POST">
+            <label for="image1_id">Image 1 (Customer ID):</label>
+            <input type="number" id="image1_id" name="image1_id" required>
+
+            <label for="image2_id">Image 2 (Customer ID):</label>
+            <input type="number" id="image2_id" name="image2_id" required>
+
+            <button type="submit">Compare Images</button>
+        </form>
+    </div>
+</body>
+</html>
