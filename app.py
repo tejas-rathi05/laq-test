@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-import mysql.connector
+import pymysql
 import cv2
 import numpy as np
 from deepface import DeepFace
@@ -7,7 +7,7 @@ from deepface import DeepFace
 app = Flask(__name__)
 
 # MySQL Configuration
-db = mysql.connector.connect(
+db = pymysql.connect(
     host="localhost",
     user="root",
     passwd="sqlintern",
